@@ -1,0 +1,13 @@
+.git/
+.local/
+.next/
+.worker-deps/
+.env*
+node_modules/
+android/
+public/panoramas/
+worker/__pycache__/
+worker/test-output/
+worker/test_*.py
+*.log
+*.pem

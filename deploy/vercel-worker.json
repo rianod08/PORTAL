@@ -1,0 +1,8 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": null,
+  "regions": ["dub1"],
+  "functions": {
+    "api/stitch.py": { "maxDuration": 300 }
+  }
+}

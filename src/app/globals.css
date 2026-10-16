@@ -1,0 +1,166 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=IBM+Plex+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap");
+@import "tailwindcss";
+
+:root {
+  --background: #eef7fb;
+  --foreground: #13202b;
+  --font-portal-sans: "Manrope", "Avenir Next", "Aptos", "Helvetica Neue", Arial, sans-serif;
+  --font-portal-display: "Fraunces", "Georgia", "Times New Roman", serif;
+  --font-portal-mono: "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
+  --font-sans: var(--font-portal-sans);
+  --font-display: var(--font-portal-display);
+  --font-mono: var(--font-portal-mono);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-portal-sans);
+  --font-display: var(--font-portal-display);
+  --font-mono: var(--font-portal-mono);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  font-feature-settings: "ss01", "cv05", "cv11";
+  min-width: 320px;
+  text-rendering: geometricPrecision;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+button,
+a,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+.marketing-display,
+.venue-title,
+.hero-title,
+.publish-success-title {
+  font-family: var(--font-display);
+  letter-spacing: 0;
+  line-height: 0.95;
+}
+
+.url-preview,
+.slug-preview,
+.embed-code,
+.mono-label,
+code {
+  font-family: var(--font-mono);
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
+
+::selection {
+  background: rgba(60, 150, 255, 0.22);
+}
+
+.glass-surface {
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0.28)),
+    rgba(255, 255, 255, 0.42);
+  border: 1px solid rgba(255, 255, 255, 0.58);
+  box-shadow:
+    0 24px 70px rgba(42, 67, 92, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.78),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(26px) saturate(1.45);
+  -webkit-backdrop-filter: blur(26px) saturate(1.45);
+}
+
+.glass-surface-dark {
+  background:
+    linear-gradient(145deg, rgba(19, 35, 62, 0.78), rgba(8, 14, 28, 0.54)),
+    rgba(10, 20, 38, 0.55);
+  border: 1px solid rgba(190, 224, 255, 0.18);
+  box-shadow:
+    0 28px 80px rgba(4, 12, 28, 0.38),
+    inset 0 1px 0 rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(28px) saturate(1.55);
+  -webkit-backdrop-filter: blur(28px) saturate(1.55);
+}
+
+.liquid-highlight {
+  position: relative;
+  overflow: hidden;
+}
+
+.liquid-highlight::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(115deg, rgba(255, 255, 255, 0.72), transparent 28%),
+    linear-gradient(295deg, rgba(160, 224, 255, 0.28), transparent 42%);
+  mix-blend-mode: screen;
+}
+
+.touch-target {
+  min-height: 44px;
+  min-width: 44px;
+}
+
+.safe-bottom {
+  padding-bottom: calc(env(safe-area-inset-bottom, 0px) + 16px);
+}
+
+.portal-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(98, 125, 155, 0.38) transparent;
+}
+
+.portal-scrollbar::-webkit-scrollbar {
+  height: 8px;
+  width: 8px;
+}
+
+.portal-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(98, 125, 155, 0.38);
+  border-radius: 999px;
+}
+
+.scene-checker {
+  background-image:
+    linear-gradient(45deg, rgba(255, 255, 255, 0.24) 25%, transparent 25%),
+    linear-gradient(-45deg, rgba(255, 255, 255, 0.24) 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, rgba(255, 255, 255, 0.24) 75%),
+    linear-gradient(-45deg, transparent 75%, rgba(255, 255, 255, 0.24) 75%);
+  background-size: 22px 22px;
+  background-position:
+    0 0,
+    0 11px,
+    11px -11px,
+    -11px 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.001ms !important;
+  }
+}

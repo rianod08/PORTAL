@@ -1,0 +1,20 @@
+# Allow only build inputs. Never upload credentials, original captures, or Android artifacts.
+**
+!package.json
+!package-lock.json
+!next.config.ts
+!tsconfig.json
+!postcss.config.mjs
+!src/
+!src/**
+!public/
+!public/**
+public/panoramas/**
+!worker/
+!worker/requirements.txt
+!worker/stitch.py
+!worker/worker.py
+!worker/Dockerfile
+!Dockerfile
+!deploy/
+!deploy/*.json
